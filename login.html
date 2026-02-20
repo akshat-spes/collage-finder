@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+
+    import { 
+      getAuth, 
+      GoogleAuthProvider, 
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signInWithPopup,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      getDoc
+    } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAOWxhHPTH1gK_ZCVn8ZpuK1fNryn981Rs",
+      authDomain: "ladder-climber-c5a08.firebaseapp.com",
+      projectId: "ladder-climber-c5a08",
+      storageBucket: "ladder-climber-c5a08.firebasestorage.app",
+      messagingSenderId: "154048587151",
+      appId: "1:154048587151:web:3925d1d21722d4e715d7fa",
+      measurementId: "G-NT3FS7FYEL"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Expose Firebase to login.js
+    window.firebaseAuth = auth;
+    window.firebaseDB = db;
+    window.GoogleAuthProvider = GoogleAuthProvider;
+    window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+    window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+    window.signOut = signOut;
+    window.signInWithPopup = signInWithPopup;
+    window.doc = doc;
+    window.setDoc = setDoc;
+    window.getDoc = getDoc;
+  </script>
+
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Login / Signup</h2>
+
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+
+  <button id="signupBtn">Sign Up</button>
+  <button id="loginBtn">Login</button>
+  <button id="googleBtn">Login with Google</button>
+
+  <p id="status"></p>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

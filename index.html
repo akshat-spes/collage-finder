@@ -1,0 +1,258 @@
+
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ladder Climber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Ladder Climber</h1>
+        <p>Pick your marks range and your interest.</p>
+      </div>
+      <div class="small"><a href="/login.html">login</a></div>
+    </header>
+
+    <!-- LEFT: controls -->
+    <div class="card controls">
+      <!-- MARKS (radios) -->
+      <div class="group">
+        <h2>Step 1 — Your Marks (percentage)</h2>
+
+        <!-- hidden radios must be before the panels so CSS sibling selector works -->
+        <div class="options">
+          <input type="radio" name="marks" id="marks-m1" checked hidden>
+          <label for="marks-m1">Below 50</label>
+
+          <input type="radio" name="marks" id="marks-m2" hidden>
+          <label for="marks-m2">50 — 59</label>
+
+          <input type="radio" name="marks" id="marks-m3" hidden>
+          <label for="marks-m3">60 — 69</label>
+
+          <input type="radio" name="marks" id="marks-m4" hidden>
+          <label for="marks-m4">70 — 79</label>
+
+          <input type="radio" name="marks" id="marks-m5" hidden>
+          <label for="marks-m5">80 — 89</label>
+
+          <input type="radio" name="marks" id="marks-m6" hidden>
+          <label for="marks-m6">90 and above</label>
+        </div>
+        <p class="help">Tip: pick the bracket that best matches your aggregate percentage.</p>
+      </div>
+
+      <!-- INTERESTS (radios) -->
+      <div class="group" style="margin-top:10px">
+        <h2>Step 2 — Your Interest / Stream</h2>
+        <div class="options">
+          <input type="radio" name="interest" id="int-eng" checked hidden>
+          <label for="int-eng">Engineering / Technology</label>
+
+          <input type="radio" name="interest" id="int-cs" hidden>
+          <label for="int-cs">Computer Science / IT</label>
+
+          <input type="radio" name="interest" id="int-med" hidden>
+          <label for="int-med">Medical / Life Sciences</label>
+
+          <input type="radio" name="interest" id="int-mgmt" hidden>
+          <label for="int-mgmt">Management / Business</label>
+
+          <input type="radio" name="interest" id="int-commerce" hidden>
+          <label for="int-commerce">Commerce / Accounting</label>
+
+          <input type="radio" name="interest" id="int-design" hidden>
+          <label for="int-design">Design / Creative</label>
+
+          <input type="radio" name="interest" id="int-arts" hidden>
+          <label for="int-arts">Arts / Humanities / Social Sciences</label>
+        </div>
+        <p class="help">Pick one interest to see targeted college types & example institutions.</p>
+      </div>
+
+      <div style="margin-top:auto;font-size:12px;color:var(--muted)">Want finer control? I can add more ranges, state filters, or a JS-powered match engine.</div>
+    </div>
+
+    <!-- RIGHT: suggestions -->
+    <div class="results">
+      <div class="card">
+        <h2 style="margin:0 0 8px 0">Suggestions Based On Your Marks</h2>
+        <!-- marks radios were above; panels show based on which is checked -->
+        <div class="marks-panels panels">
+          <div class="panel m1">
+            <h3>Below 50%</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">Diploma / Polytechnic</div>
+              <div class="chip">Community Colleges</div>
+              <div class="chip">Certificate Courses</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Local government degree colleges, private institutes for vocational courses, state polytechnics.</p>
+          </div>
+
+          <div class="panel m2">
+            <h3>50 — 59%</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">State colleges</div>
+              <div class="chip">Private colleges (good for niche branches)</div>
+              <div class="chip">Polytechnic / Diploma → Lateral entry</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Many state universities and private institutes that accept state rank / entrance tests.</p>
+          </div>
+
+          <div class="panel m3">
+            <h3>60 — 69%</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">Reputed private colleges</div>
+              <div class="chip">State engineering colleges</div>
+              <div class="chip">BBA / BSc top-tier state colleges</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Strong private colleges and many state colleges across India for popular streams.</p>
+          </div>
+
+          <div class="panel m4">
+            <h3>70 — 79%</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">Good NITs / State colleges (select branches)</div>
+              <div class="chip">Top private universities</div>
+              <div class="chip">Leading design / commerce colleges</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Many national-level colleges and highly ranked private universities for core branches.</p>
+          </div>
+
+          <div class="panel m5">
+            <h3>80 — 89%</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">Top NITs / Tier-1 private colleges</div>
+              <div class="chip">Competitive medical & engineering programs</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Strong chance for higher-ranked state & national colleges (branch dependent).</p>
+          </div>
+
+          <div class="panel m6">
+            <h3>90% and above</h3>
+            <div class="small">Best fits</div>
+            <div class="chips">
+              <div class="chip">IIT / top NIT / BITS</div>
+              <div class="chip">Top medical colleges</div>
+              <div class="chip">Premier national institutes</div>
+            </div>
+            <p class="small" style="margin-top:8px">Examples: Aim for national competitive exams and top colleges; wide range of high-tier options.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px 0">Suggestions Based On Your Interest</h2>
+        <div class="interest-panels panels">
+          <div class="panel eng">
+            <h3>Engineering / Technology</h3>
+            <div class="chips"><div class="chip">BE / BTech</div><div class="chip">Polytechnic → BE</div><div class="chip">State & National Institutes</div></div>
+            <p class="small" style="margin-top:8px">Branches: Civil, Electrical, Mechanical, Electronics, etc. Look for colleges with strong placement & labs.</p>
+          </div>
+
+          <div class="panel cs">
+            <h3>Computer Science / IT</h3>
+            <div class="chips"><div class="chip">BTech / BSc (CS)</div><div class="chip">Private IT-focused colleges</div><div class="chip">Coding bootcamps</div></div>
+            <p class="small" style="margin-top:8px">Highly placement-driven — focus on colleges with good industry ties and active CS clubs.</p>
+          </div>
+
+          <div class="panel med">
+            <h3>Medical / Life Sciences</h3>
+            <div class="chips"><div class="chip">MBBS / BDS</div><div class="chip">BSc (Biology)</div><div class="chip">Paramedical colleges</div></div>
+            <p class="small" style="margin-top:8px">Often requires competitive entrance exams — check eligibility & cutoffs carefully.</p>
+          </div>
+
+          <div class="panel mgmt">
+            <h3>Management / Business</h3>
+            <div class="chips"><div class="chip">BBA / BMS</div><div class="chip">Integrated MBA</div></div>
+            <p class="small" style="margin-top:8px">Good for students interested in entrepreneurship, finance, or corporate careers.</p>
+          </div>
+
+          <div class="panel commerce">
+            <h3>Commerce / Accounting</h3>
+            <div class="chips"><div class="chip">BCom / BBA (Finance)</div><div class="chip">Professional courses (CA, CMA)</div></div>
+            <p class="small" style="margin-top:8px">Combine college degree with professional qualifications for best outcomes.</p>
+          </div>
+
+          <div class="panel design">
+            <h3>Design / Creative</h3>
+            <div class="chips"><div class="chip">BDes / BFA</div><div class="chip">Design schools & studios</div></div>
+            <p class="small" style="margin-top:8px">Look for portfolio-focused admissions and strong alumni networks in design.</p>
+          </div>
+
+          <div class="panel arts">
+            <h3>Arts / Humanities / Social Sciences</h3>
+            <div class="chips"><div class="chip">BA / BSc (Social)</div><div class="chip">Liberal arts colleges</div></div>
+            <p class="small" style="margin-top:8px">Great for research, civil services prep, journalism, and teaching careers.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card small">
+        <strong>How to use:</strong>
+        <ol style="margin:6px 0 0 18px;color:var(--muted)">
+          <li>Select your marks range on the left — the top-right "Marks" card updates.</li>
+          <li>Select your interest — the middle-right "Interest" card updates.</li>
+          <li>Cross-reference both panels to find college types and example institutions you can target.</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+  <div>
+<!-- LOCATION (select) -->
+<div class="group" style="margin-top:10px">
+  <h2>Step 3 — Your Location / Region</h2>
+  <div class="options">
+    <select id="region" class="location-select">
+      <option value="all" selected>All Regions</option>
+      <option value="north">North India</option>
+      <option value="south">South India</option>
+      <option value="east">East India</option>
+      <option value="west">West India</option>
+      <option value="central">Central India</option>
+    </select>
+
+    <select id="state" class="location-select" disabled>
+      <option value="all">Select State</option>
+    </select>
+
+    <select id="city" class="location-select" disabled>
+      <option value="all">Select City</option>
+    </select>
+  </div>
+  <p class="help">Choose your region → state → city to refine suggestions.</p>
+</div>
+
+
+      <script src="script.js"
+        type="module">
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    // Not logged in → send to login page
+    window.location.href = "login.html";
+  }
+});
+
+      </script>
+  </div>
+  <script type="module" src="firebase-college.js"></script>
+
+</body>
+</html>
+```
+

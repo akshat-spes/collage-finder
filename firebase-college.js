@@ -87,3 +87,5 @@ async function fetchColleges() {
 
 // Initial load
 fetchColleges();
+
+export { app, db };

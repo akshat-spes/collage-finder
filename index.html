@@ -236,21 +236,19 @@
 </div>
 
 
-      <script src="script.js"
-        type="module">
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    // Not logged in → send to login page
-    window.location.href = "login.html";
-  }
-});
-
-      </script>
-  </div>
+      <script type="module" src="script.js"></script>
   <script type="module" src="firebase-college.js"></script>
+  <script type="module">
+    import { app } from "./firebase-college.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+  </script>
 
 </body>
 </html>
